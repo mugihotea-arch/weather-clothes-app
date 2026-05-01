@@ -22,32 +22,37 @@ export function WeatherCard({ weather }: WeatherCardProps) {
   return (
     <Card elevation={3} sx={{ borderRadius: 3 }}>
       <CardContent>
-        <Box textAlign="center" mb={2}>
+        <Box sx={{ textAlign: "center", mb: 2 }}>
           <Typography variant="h2" component="span">
             {emoji}
           </Typography>
-          <Typography variant="h5" fontWeight="bold">
+
+          <Typography variant="h5" sx={{ fontWeight: "bold" }}>
             {label}
           </Typography>
         </Box>
 
-        <Grid container spacing={2} justifyContent="center">
+        <Grid container spacing={2} sx={{ justifyContent: "center" }}>
           {[
             { label: "気温", value: `${weather.temp}℃` },
             { label: "体感", value: `${weather.feelsLike}℃` },
             { label: "湿度", value: `${weather.humidity}%` },
             { label: "風速", value: `${weather.wind}km/h` },
           ].map(({ label, value }) => (
-            <Grid item xs={6} sm={3} key={label}>
+            <Grid size={{ xs: 6, sm: 3 }} key={label}>
               <Box
-                textAlign="center"
-                p={1}
-                sx={{ bgcolor: "grey.100", borderRadius: 2 }}
+                sx={{
+                  textAlign: "center",
+                  p: 1,
+                  bgcolor: "grey.100",
+                  borderRadius: 2,
+                }}
               >
                 <Typography variant="caption" color="text.secondary">
                   {label}
                 </Typography>
-                <Typography variant="h6" fontWeight="bold">
+
+                <Typography variant="h6" sx={{ fontWeight: "bold" }}>
                   {value}
                 </Typography>
               </Box>
