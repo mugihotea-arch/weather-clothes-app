@@ -32,7 +32,7 @@ export function CurrentWeather({ current, daily }: CurrentWeatherProps) {
           現在の天気
         </Typography>
         <Box sx={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-          <Typography variant="h2" sx={{ fontWeight: "bold" }}>
+          <Typography variant="h2" sx={{ fontWeight: "bold", color: "#000" }}>
             {Math.round(current.temp)}°
           </Typography>
           {ICONS[info.iconType]}

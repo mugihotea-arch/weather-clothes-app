@@ -58,7 +58,20 @@ export function ClothingHeader({
 
       {!loading && advice && (
         <>
-          <Typography variant="h4" sx={{ fontWeight: "bold", mt: 2, mb: 1 }}>
+          <Typography
+            variant="h4"
+            sx={{
+              fontWeight: "bold",
+              mt: 2,
+              mb: 1,
+              fontSize: { xs: "1.2rem", sm: "2.125rem" }, // スマホで小さめ
+              whiteSpace: "nowrap",
+              overflow: "hidden",
+              textOverflow: "ellipsis",
+              width: "100%",
+              display: "block"
+            }}
+          >
             {advice.outfit}
           </Typography>
           <Typography variant="body2" sx={{ opacity: 0.9 }}>
